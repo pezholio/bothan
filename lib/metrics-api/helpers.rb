@@ -112,9 +112,7 @@ module Helpers
     if single?(metric.value, datetime)
       "/metrics/#{metric.name}/#{now}"
     else
-      days = 30
-      before = (Time.now - (60 * 60 * 24 * days)).iso8601
-      "/metrics/#{metric.name}/#{before}/#{now}"
+      "/metrics/#{metric.name}/*/*"
     end
   end
 
